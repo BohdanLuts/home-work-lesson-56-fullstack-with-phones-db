@@ -1,0 +1,31 @@
+PATCH http://localhost:5000/api/phones/2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "brand":"Nokia"
+}
+
+//Invalid data
+PATCH http://localhost:5000/api/phones/2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "brand":"????"
+}
+
+//Unexisting phone
+PATCH http://localhost:5000/api/phones/60 HTTP/1.1
+Content-Type: application/json
+
+{
+  "brand":"Samsung"
+}
+
+//Invalid data - ununique model
+PATCH http://localhost:5000/api/phones/2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "model":"12 Pro"
+}
+

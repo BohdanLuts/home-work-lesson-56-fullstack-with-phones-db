@@ -1,0 +1,12 @@
+POST http://localhost:5000/api/phones
+Content-Type: application/json
+
+{
+"model": "8 Iphone",
+"brand": "Iphone",
+"year": "2016",
+"ram": "64",
+"processor": "Apple A8",
+"screenDiagonal": "6.2",
+"hasNfc": true
+}
