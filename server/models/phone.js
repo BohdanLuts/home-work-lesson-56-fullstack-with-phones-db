@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       model: {
         type: DataTypes.STRING(64),
-        unique: true,
+        unique: 'uniqueModelBrand',
         allowNull: false,
         validate: {
           is: /^[a-zA-Z0-9\s]*$/,
@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       brand: {
         type: DataTypes.STRING(16),
         allowNull: false,
+        unique: 'uniqueModelBrand',
         validate: {
           is: /^[a-zA-Z0-9\s]*$/,
           len: [2, 16],
@@ -32,15 +33,15 @@ module.exports = (sequelize, DataTypes) => {
       },
 
       year: {
-        type: DataTypes.INTEGER(4),
+        type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-          isNumeric: true,
+          is: /^[0-9]{4}$/,
         },
       },
 
       ram: {
-        type: DataTypes.INTEGER(5),
+        type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
           isNumeric: true,

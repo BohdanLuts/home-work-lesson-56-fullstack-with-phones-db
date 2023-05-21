@@ -12,12 +12,13 @@ module.exports = {
       },
       model: {
         type: Sequelize.STRING,
-        unique: true,
+        unique: 'uniqueModelBrand',
         allowNull: false,
       },
       brand: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: 'uniqueModelBrand',
       },
       year: {
         type: Sequelize.INTEGER,
