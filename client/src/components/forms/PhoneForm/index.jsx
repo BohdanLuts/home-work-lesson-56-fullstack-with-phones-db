@@ -13,7 +13,7 @@ function PhoneForm ({ create }) {
     ram: '',
     processor: '',
     screenDiagonal: '',
-    hasNfc: '',
+    hasNfc: false,
   };
 
   const handleSubmit = (values, formikBag) => {
@@ -32,7 +32,7 @@ function PhoneForm ({ create }) {
       onSubmit={handleSubmit}
       validationSchema={PHONE_VALIDATION_SCHEMA}
     >
-      {formikProps => (
+      {() => (
         <Form className={styles.form}>
           <Input
             label='Model:'
